@@ -2,20 +2,6 @@ import { Image, View } from 'react-native';
 import CustomText from './CustomText';
 
 const ProfileCard = ({ name }) => {
-    // const [fontsLoaded] = useFonts({
-    //     'Poppins-Regular': require('@/assets/fonts/Poppins-Regular.ttf'),
-    //     'Poppins-SemiBold': require('@/assets/fonts/Poppins-SemiBold.ttf'),
-    //     'Poppins-Bold': require('@/assets/fonts/Poppins-Bold.ttf'),
-    // });
-
-    // if (!fontsLoaded) {
-    //     return (
-    //         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    //             <CustomText text="Loading fonts..." />
-    //         </View>
-    //     );
-    // }
-
     return (
         <View
             style={{

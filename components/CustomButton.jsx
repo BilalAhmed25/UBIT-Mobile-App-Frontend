@@ -1,40 +1,37 @@
 import { MaterialIcons } from '@react-native-vector-icons/material-icons';
 import { Text, TouchableOpacity } from 'react-native';
 
-const CustomButtom = ({ text, icon }) => {
+const CustomButton = ({ color, fontSize, text, icon, style }) => {
 
     return (
         <TouchableOpacity
             onPress={() => { }}
             style={{
                 backgroundColor: '#FFFFFF',
-                paddingVertical: 10,
+                paddingVertical: 8,
                 paddingHorizontal: 16,
                 borderRadius: 8,
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'center',
-
-                elevation: 2,
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.2,
-                shadowRadius: 1.41,
+                ...style,
             }}
         >
             <Text
                 style={{
-                    color: '#000000',
-                    fontSize: 14,
+                    color: color || '#000000',
+                    fontFamily: 'Poppins-Regular',
+                    fontSize: fontSize || 14,
                     fontWeight: '600',
-                    marginRight: 8
+                    marginRight: 8,
+                    marginTop: 3,
                 }}
             >
                 {text}
             </Text>
-            <MaterialIcons name={icon} color="#000000" size={14} />
-        </TouchableOpacity>
+            <MaterialIcons name={icon} color={color || '#000000'} size={14} />
+        </TouchableOpacity >
     );
 }
 
-export default CustomButtom;
+export default CustomButton;

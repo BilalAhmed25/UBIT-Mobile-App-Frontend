@@ -1,57 +1,56 @@
-import Card from '@/components/Card';
-import CustomButtom from '@/components/CustomButton';
-import Header from '@/components/Header';
-import ProfileCard from '@/components/ProfileCard';
-import { ScrollView, Text, View } from 'react-native';
+import CustomButton from '@/components/CustomButton';
+import CustomText from '@/components/CustomText';
+import DashboardBanner from '@/components/dashboardBanner';
+import DashboardCard from '@/components/dashboardCard';
+import DashboardHeader from '@/components/dashboardHeader';
+import { ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const HomeScreen = () => {
-    const abs = [
-        { name: 'First render', iconName: '1k' },
-        { name: 'Second render', iconName: '2k' },
-        { name: 'Third render', iconName: '3k' },
-        { name: 'Fourth render', iconName: '4k' },
+    const cardsData = [
+        { name: 'Timetable', iconName: '1k', iconColor: '#800000' },
+        { name: 'Records', iconName: '2k', iconColor: '#1950c7' },
+        { name: 'Attendance', iconName: '3k', iconColor: '#338000' },
+        { name: 'Campus', iconName: '4k', iconColor: '#805e00' },
     ]
-
     return (
         <SafeAreaView>
-            <View
-                style={{
-                    position: 'absolute',
-                    height: 300,
-                    width: '100%',
-                    backgroundColor: '#800000',
-                }}
-            >
-            </View>
-            <Header leftIcon={"home"} rightIcon={"settings"} />
-            <ProfileCard name={"Bilal Ahmed"} />
+            <DashboardHeader />
+            <ScrollView vertical showsVerticalScrollIndicator={false}>
+                <DashboardBanner
+                    title="Your Academic Journey Starts Here"
+                    imageSource={require('@/assets/images/ubit-facade.jpg')}
+                />
 
-            <View
-                style={{
+                <CustomText style={{ fontSize: 18, marginHorizontal: 20, marginTop: 10 }}>Quick Actions</CustomText>
+                <View style={{
                     flexDirection: 'row',
+                    flexWrap: 'wrap',
                     justifyContent: 'space-between',
-                    paddingHorizontal: 20,
-                    paddingTop: 20,
-                }}
-            >
-                <Text style={{ fontSize: 20, fontWeight: '600', marginTop: 8, textAlign: 'center' }}>Cards</Text>
-                <CustomButtom text="View all" icon="arrow-forward-ios" />
-            </View>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                <View
-                    style={{
-                        flexDirection: 'row',
-                        gap: 10,
-                        padding: 20,
-                    }}
-                >
-                    {abs.map((item, index) => (
-                        <Card key={index} text={item.name} icon={item.iconName} />
+                    padding: 10,
+                    marginHorizontal: 10,
+                }}>
+                    {cardsData.map((item, index) => (
+                        <DashboardCard
+                            key={index}
+                            title={item.name}
+                            description={`View your ${item.name.toLowerCase()} details and updates.`}
+                            iconName={item.iconName}
+                            iconColor={item.iconColor}
+
+                            onPress={() => { }}
+                            style={{ width: '48%', marginBottom: 15 }}
+                        />
                     ))}
                 </View>
+
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginHorizontal: 20, marginTop: 10 }}>
+                    <CustomText style={{ fontSize: 18 }}>Recent Announcements</CustomText>
+                    <CustomButton text="History" icon="chevron-right" style={{ fontSize: 14, color: '#007BFF' }} onPress={() => { }} />
+                </View>
+
             </ScrollView>
-        </SafeAreaView>
+        </SafeAreaView >
     );
 }
 
