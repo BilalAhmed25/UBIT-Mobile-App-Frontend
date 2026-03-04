@@ -14,7 +14,7 @@ export default function RootLayout() {
 
     return (
         <>
-            <Stack screenOptions={{ headerShown: false, animation: 'flip', }} />
+            <Stack screenOptions={{ headerShown: false, animation: 'fade', }} />
 
             <StatusBar style="dark" />
             <CustomBottomNav />

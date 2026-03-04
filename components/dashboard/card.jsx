@@ -1,6 +1,6 @@
+import CustomText from "@/components/CustomText";
 import { MaterialIcons } from "@expo/vector-icons";
 import { View } from "react-native";
-import CustomText from "./CustomText";
 
 const DashboardCard = ({ title, description, iconName, iconColor, onPress, style }) => {
     return (

@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         height: Platform.OS === 'ios' ? 80 : 60,
         backgroundColor: '#fff',
-        borderTopWidth: 1,
+        // borderTopWidth: 1,
         borderTopColor: '#ccc',
         justifyContent: 'space-around',
         alignItems: 'center',

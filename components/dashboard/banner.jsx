@@ -1,9 +1,9 @@
+import CustomButton from "@/components/CustomButton";
+import CustomText from "@/components/CustomText";
 import { LinearGradient } from 'expo-linear-gradient';
 import { ImageBackground, StyleSheet, View } from "react-native";
-import CustomButton from "./CustomButton";
-import CustomText from "./CustomText";
 
-const DashboardBanner = ({ title, description, imageSource, onPress }) => {
+const DashboardBanner = ({ title, imageSource, onPress }) => {
     return (
         <>
             <ImageBackground
