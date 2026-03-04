@@ -12,7 +12,7 @@ const CustomBottomNav = () => {
         { name: 'home', label: 'Home', icon: 'home' },
         { name: 'courses', label: 'Courses', icon: 'book' },
         { name: 'schedule', label: 'Schedule', icon: 'calendar' },
-        { name: 'profile', label: 'Prof0ile', icon: 'person' },
+        { name: 'profile', label: 'Profile', icon: 'person' },
     ];
 
     return (
