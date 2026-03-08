@@ -27,9 +27,9 @@ export default function RootLayout() {
                         }}
                     >
                         <Stack.Screen name="home" />
+                        <StatusBar style="dark" />
+                        <CustomBottomNav />
                     </Stack>
-                    <StatusBar style="dark" />
-                    <CustomBottomNav />
                 </SafeAreaView>
             </SafeAreaProvider>
         </>
