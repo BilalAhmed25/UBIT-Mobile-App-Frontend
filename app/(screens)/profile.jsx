@@ -4,6 +4,7 @@ import ProfileCard from '@/components/profile/profile-card';
 import QuickLinksCard from '@/components/profile/quick-links-card';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const HomeScreen = () => {
@@ -26,7 +27,7 @@ const HomeScreen = () => {
     ]
 
     return (
-        <>
+        <SafeAreaView style={{ flex: 1 }}>
             <StatusBar style='light' backgroundColor='#800000' />
 
             <View
@@ -44,7 +45,7 @@ const HomeScreen = () => {
                 <ContactCard data={""} />
                 <QuickLinksCard data={quickLinks} />
             </ScrollView>
-        </>
+        </SafeAreaView>
     );
 }
 

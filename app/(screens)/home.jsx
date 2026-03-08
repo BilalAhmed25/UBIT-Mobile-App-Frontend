@@ -6,6 +6,7 @@ import DashboardCard from '@/components/dashboard/card';
 import DashboardHeader from '@/components/dashboard/header';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const HomeScreen = () => {
     const cardsData = [
@@ -22,8 +23,8 @@ const HomeScreen = () => {
     ]
 
     return (
-        <>
-            <StatusBar style="dark" backgroundColor='#eeeeee' />
+        <SafeAreaView style={{ flex: 1 }}>
+            <StatusBar style="automatic" />
 
             <DashboardHeader />
             <ScrollView vertical showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 70 }}>
@@ -70,7 +71,7 @@ const HomeScreen = () => {
                     </View>
                 ))}
             </ScrollView>
-        </>
+        </SafeAreaView>
     );
 }
 

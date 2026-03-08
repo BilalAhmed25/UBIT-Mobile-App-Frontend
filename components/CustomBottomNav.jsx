@@ -25,7 +25,7 @@ const CustomBottomNav = () => {
                         <TouchableOpacity
                             key={tab.name}
                             style={{ ...styles.tab, backgroundColor: isActive ? 'rgba(136, 0, 0, 0.12)' : 'transparent' }}
-                            onPress={() => router.push(`/screens/${tab.name}`)}
+                            onPress={() => router.push(`/(screens)/${tab.name}`)}
                         >
                             <Ionicons
                                 name={tab.icon}
