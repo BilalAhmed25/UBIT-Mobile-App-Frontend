@@ -2,8 +2,10 @@ import Header from '@/components/Header';
 import ContactCard from '@/components/profile/contact-card';
 import ProfileCard from '@/components/profile/profile-card';
 import QuickLinksCard from '@/components/profile/quick-links-card';
+import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 const HomeScreen = () => {
     const quickLinks = [
@@ -25,7 +27,9 @@ const HomeScreen = () => {
     ]
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1 }}>
+            <StatusBar style='light' backgroundColor='#800000' />
+
             <View
                 style={{
                     position: 'absolute',

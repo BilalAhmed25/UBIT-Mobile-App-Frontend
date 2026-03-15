@@ -19,8 +19,8 @@ const DashboardBanner = ({ title, imageSource, onPress }) => {
 
                 {/* Your Content */}
                 <View style={{ gap: 16, alignItems: 'flex-start' }}>
-                    <CustomText style={{ color: 'white', fontFamily: 'Poppins-Bold', fontSize: 20, marginBottom: 4, maxWidth: 300, lineHeight: 24 }}>{title}</CustomText>
-                    <CustomButton text="Explore Campus" icon="arrow-forward-ios" color="#FFFFFF" style={{ backgroundColor: '#646464a6', borderRadius: 20, borderWidth: 1, borderColor: '#ffffff46' }} onPress={onPress} />
+                    <CustomText style={styles.title}>{title}</CustomText>
+                    <CustomButton text="Explore Campus" icon="arrow-forward-ios" color="#FFFFFF" style={{ backgroundColor: '#646464a6', borderRadius: 20, borderWidth: 1, borderColor: '#ffffff46', paddingVertical: 5 }} onPress={onPress} />
                 </View>
             </ImageBackground>
         </>
@@ -45,6 +45,14 @@ const styles = StyleSheet.create({
         right: 0,
         bottom: 0,
         height: 120,
+    },
+    title: {
+        color: 'white',
+        fontFamily: 'Poppins-Bold',
+        fontSize: 20,
+        marginBottom: 4,
+        maxWidth: 300,
+        lineHeight: 24
     }
 });
 

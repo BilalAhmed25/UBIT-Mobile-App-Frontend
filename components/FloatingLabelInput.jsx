@@ -23,13 +23,13 @@ const FloatingInput = ({ label, value, onChangeText, error, ...props }) => {
     const labelStyle = {
         top: animatedIsFocused.interpolate({
             inputRange: [0, 1],
-            outputRange: [18, -10], // Moves from center to top
+            outputRange: [40, 25], // Moves from center to top
         }),
         fontSize: animatedIsFocused.interpolate({
             inputRange: [0, 1],
             outputRange: [16, 12], // Shrinks when floating
         }),
-        color: error ? '#ff1744' : (isFocused ? '#6200ee' : '#aaa'),
+        color: error ? '#ff1744' : (isFocused ? '#800000' : '#868686'),
     };
 
     return (
@@ -58,18 +58,17 @@ const FloatingInput = ({ label, value, onChangeText, error, ...props }) => {
 const styles = StyleSheet.create({
     container: {
         paddingTop: 18,
-        marginVertical: 10,
         width: '100%',
     },
     label: {
         position: 'absolute',
         left: 12,
-        backgroundColor: '#fff', // Matches background to "cut" through the border
         paddingHorizontal: 4,
         zIndex: 1,
+        fontFamily: 'Poppins-Regular',
     },
     input: {
-        height: 50,
+        height: 70,
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 8,
@@ -78,8 +77,9 @@ const styles = StyleSheet.create({
         color: '#000',
     },
     inputFocused: {
-        borderColor: '#6200ee',
-        borderWidth: 2,
+        borderColor: '#800000',
+        borderWidth: 1,
+        paddingTop: 25, // Extra padding to accommodate floating label
     },
     inputError: {
         borderColor: '#ff1744',
