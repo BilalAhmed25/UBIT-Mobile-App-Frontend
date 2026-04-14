@@ -1,10 +1,9 @@
+import Header from "@/components/fee-payment/Header";
+import { useRouter } from "expo-router";
 import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 import FeeItemCard from "../../components/fee-payment/FeeItemCard";
 import FeeSummaryCard from "../../components/fee-payment/FeeSummaryCard";
-import PayNowButton from "../../components/fee-payment/PayNowButton";
-import Header from "@/components/fee-payment/Header";
-import { useRouter } from "expo-router";
-
+import PayNowButton2 from "../../components/fee-payment/PayNowButton2";
 export default function FeeDetailsScreen(){
 
 const router = useRouter();
@@ -39,15 +38,21 @@ amount={fee.amount}
 
 <FeeSummaryCard total={total} />
 
-<PayNowButton
-onPress={() => router.push("/payment")}
+
+        <PayNowButton2
+  onPress={() =>
+    router.push({
+      pathname: "/payment",
+      params: {
+        fees: JSON.stringify(fees),
+        total: total,
+      },
+    })
+  }
 />
-
-</ScrollView>
-
-</SafeAreaView>
-
-);
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({

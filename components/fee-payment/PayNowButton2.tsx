@@ -1,9 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-export default function ConfirmPaymentButton({ amount, onPress }: { amount: number; onPress: () => void }) {
+export default function PayNowButton2({ onPress }: { onPress: () => void }) {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={styles.text}>Confirm Payment — PKR {amount.toLocaleString()}</Text>
+      <Text style={styles.text}>Pay Now</Text>
     </TouchableOpacity>
   );
 }
@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#B40000",
     marginHorizontal: 20,
-    marginBottom: 40,
-    padding: 18,
+    marginBottom: 30,
+    padding: 16,
     borderRadius: 12,
     alignItems: "center",
   },
   text: {
     color: "#fff",
-    fontWeight: "bold",
     fontSize: 16,
+    fontWeight: "bold",
   },
 });
