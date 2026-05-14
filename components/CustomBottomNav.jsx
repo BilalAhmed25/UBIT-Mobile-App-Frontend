@@ -12,6 +12,7 @@ const CustomBottomNav = () => {
         { name: 'home', label: 'Home', icon: 'home' },
         { name: 'courses', label: 'Courses', icon: 'book' },
         { name: 'schedule', label: 'Schedule', icon: 'calendar' },
+        { name: 'notes', label: 'Notes', icon: 'document-text' },
         { name: 'profile', label: 'Profile', icon: 'person' },
         { name: 'explore', label: 'Store', icon: 'cart' },
     ];
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     tab: {
         justifyContent: 'center',
         alignItems: 'center',
-        paddingHorizontal: 20,
+        paddingHorizontal: 12,
         paddingVertical: 5,
         borderRadius: 10,
     },

@@ -3,6 +3,8 @@ import { Stack } from "expo-router";
 import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
+import { NotesProvider } from "@/context/NotesContext";
+
 export default function RootLayout() {
     const [isLoggedIn] = useState(true);
 
@@ -15,14 +17,16 @@ export default function RootLayout() {
     if (!loaded) return null;
 
     return (
-        <SafeAreaProvider>
-            <Stack screenOptions={{ headerShown: false }}>
-                {isLoggedIn ? (
-                    <Stack.Screen name="(screens)" />
-                ) : (
-                    <Stack.Screen name="(auth)" />
-                )}
-            </Stack>
-        </SafeAreaProvider>
+        <NotesProvider>
+            <SafeAreaProvider>
+                <Stack screenOptions={{ headerShown: false }}>
+                    {isLoggedIn ? (
+                        <Stack.Screen name="(screens)" />
+                    ) : (
+                        <Stack.Screen name="(auth)" />
+                    )}
+                </Stack>
+            </SafeAreaProvider>
+        </NotesProvider>
     );
 }
