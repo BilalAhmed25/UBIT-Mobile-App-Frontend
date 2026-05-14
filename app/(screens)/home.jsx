@@ -8,20 +8,20 @@ import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+const cardsData = [
+    { name: 'Timetable', iconName: '1k', iconColor: '#800000' },
+    { name: 'Records', iconName: '2k', iconColor: '#1950c7' },
+    { name: 'Attendance', iconName: '3k', iconColor: '#338000' },
+    { name: 'Campus', iconName: '4k', iconColor: '#805e00' },
+];
+
+const announcementsData = [
+    { title: 'Midterm Exams Schedule', description: 'Midterm exams will commence from 15th March. Please check your timetable for details.', date: 'March 10, 2024', icon: 'schedule' },
+    { title: 'Library Renovation', description: 'The library will be closed for renovation from 1st April to 30th April. Plan your visits accordingly.', date: 'March 25, 2024', icon: 'local-library' },
+    { title: 'New Course Offerings', description: 'New courses in Data Science and AI will be available next semester. Check the course catalog for more info.', date: 'April 5, 2024', icon: 'book' },
+];
+
 const HomeScreen = () => {
-    const cardsData = [
-        { name: 'Timetable', iconName: '1k', iconColor: '#800000' },
-        { name: 'Records', iconName: '2k', iconColor: '#1950c7' },
-        { name: 'Attendance', iconName: '3k', iconColor: '#338000' },
-        { name: 'Campus', iconName: '4k', iconColor: '#805e00' },
-    ]
-
-    const announcementsData = [
-        { title: 'Midterm Exams Schedule', description: 'Midterm exams will commence from 15th March. Please check your timetable for details.', date: 'March 10, 2024', icon: 'schedule' },
-        { title: 'Library Renovation', description: 'The library will be closed for renovation from 1st April to 30th April. Plan your visits accordingly.', date: 'March 25, 2024', icon: 'local-library' },
-        { title: 'New Course Offerings', description: 'New courses in Data Science and AI will be available next semester. Check the course catalog for more info.', date: 'April 5, 2024', icon: 'book' },
-    ]
-
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <StatusBar style="automatic" />
@@ -48,7 +48,6 @@ const HomeScreen = () => {
                             description={`View your ${item.name.toLowerCase()} details and updates.`}
                             iconName={item.iconName}
                             iconColor={item.iconColor}
-
                             onPress={() => { }}
                             style={{ width: '48%', marginBottom: 15 }}
                         />
@@ -76,6 +75,6 @@ const HomeScreen = () => {
             </ScrollView>
         </SafeAreaView>
     );
-}
+};
 
 export default HomeScreen;
